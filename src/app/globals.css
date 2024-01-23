@@ -2,32 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,500&display=swap");
+
+body,
+* {
+	font-family: "Nunito Sans", sans-serif;
+	padding: 0 0;
+	margin: 0 0;
+}
+.portfolio-bg {
+	background-image: url("/hero-section-bg.avif");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 100%;
+}
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@keyframes erasing {
+	from {
+		width: 100%;
+	}
+	to {
+		width: 0;
+	}
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.typing-animation {
+	overflow: hidden;
+	border-right: 2px solid #fff; /* Adjust the border color */
+	white-space: nowrap;
+	animation: typing 1s steps(20), erasing 1s steps(20) 2s; /* Adjust the animation duration and steps */
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.outlet {
+	height: 88vh;
+	overflow-y: scroll;
+}
+.outlet::-webkit-scrollbar {
+	display: none;
+}
+@keyframes animateSideways1 {
+	0%,
+	100% {
+		transform: translateX(-15px);
+	}
+	50% {
+		transform: translateX(0px);
+	}
+}
+.animate-oneWay1 {
+	animation: animateSideways1 2s ease-in-out infinite;
+}
+@keyframes animateSideways2 {
+	0%,
+	100% {
+		transform: translateY(-10px);
+	}
+	50% {
+		transform: translateY(10px);
+	}
+}
+.animate-oneWay2 {
+	animation: animateSideways2 2s ease-in-out infinite;
 }

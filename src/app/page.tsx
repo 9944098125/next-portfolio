@@ -1,113 +1,263 @@
+"use client";
+
 import Image from "next/image";
+// Import React and useState
+import React, { useEffect, useState } from "react";
+import { Chrono } from "react-chrono";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+	const [text, setText] = useState("");
+	const [isTyping, setIsTyping] = useState(true);
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+	useEffect(() => {
+		const messages = ["Srinivas Prasad Akella", "A MERN stack Developer"]; // Replace with the desired messages
+		const typingDelay = 150; // Delay between typing characters
+		const erasingDelay = 100; // Delay between erasing characters
+		const pauseBeforeStart = 1000; // Pause before starting the animation
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+		const animate = async () => {
+			while (true) {
+				for (let i = 0; i < messages.length; i++) {
+					const currentText = messages[i];
+					setIsTyping(true);
+					for (let j = 0; j < currentText.length; j++) {
+						setText(currentText.substring(0, j + 1));
+						await new Promise((resolve) => setTimeout(resolve, typingDelay));
+					}
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+					await new Promise((resolve) => setTimeout(resolve, pauseBeforeStart));
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+					setIsTyping(false);
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+					for (let j = currentText.length; j > 0; j--) {
+						setText(currentText.substring(0, j - 1));
+						await new Promise((resolve) => setTimeout(resolve, erasingDelay));
+					}
+
+					await new Promise((resolve) => setTimeout(resolve, pauseBeforeStart));
+				}
+			}
+		};
+
+		animate();
+	}, []);
+
+	const stacks = [
+		{
+			img: "/frontend.jpeg",
+			name: "Frontend Development",
+		},
+		{
+			img: "/backend.jpeg",
+			name: "Backend Development",
+		},
+		{
+			img: "/full.webp",
+			name: "Full Stack Development",
+		},
+		{
+			img: "/database.jpeg",
+			name: "Database Management",
+		},
+		{
+			img: "/logical.jpeg",
+			name: "Software Logics",
+		},
+	];
+
+	const skills = [
+		{
+			logo: "/html.png",
+		},
+		{
+			logo: "/css.png",
+		},
+		{
+			logo: "/js.png",
+		},
+		{
+			logo: "/react.png",
+		},
+		{
+			logo: "/node.png",
+		},
+		{
+			logo: "/python.png",
+		},
+		{
+			logo: "/angular.png",
+		},
+		{
+			logo: "/reactNative.png",
+		},
+		{
+			logo: "/mongoDB.png",
+		},
+		{
+			logo: "/sql.png",
+		},
+		{
+			logo: "/git.png",
+		},
+		{
+			logo: "/tailwind.png",
+		},
+		{
+			logo: "/redux.svg",
+		},
+		{
+			logo: "/next.png",
+		},
+		{
+			logo: "/ts.png",
+		},
+		{
+			logo: "/express.png",
+		},
+		{
+			logo: "/bit.png",
+		},
+		{
+			logo: "/flask.png",
+		},
+	];
+
+	const chronoItems = [
+		{
+			title: "Dec 2020 - Nov 2021",
+			cardTitle: "Teknotrait Solutions PVT LTD.",
+			url: "https://www.teknotrait.com/",
+			cardSubtitle: "Web Development Intern",
+			cardDetailedText: [
+				"Learning logics in ReactJS, NodeJS & MySQL",
+				"Developing web pages with vanilla Javascript",
+				"Learning Global State Management with Redux & Context",
+			],
+			media: {
+				type: "IMAGE",
+				source: {
+					url: "https://teknotrait.com/wp-content/uploads/2019/05/Teknotrait_logo_dark.png",
+				},
+			},
+		},
+		{
+			title: "Dec 2021 - May 2023",
+			cardTitle: "Teknotrait Solutions PVT LTD.",
+			url: "https://www.teknotrait.com/",
+			cardSubtitle: "Associate Software Engineer",
+			cardDetailedText: [
+				"Developing Web Applications with ReactJS, NodeJS & MySQL",
+				"Developing web pages with ReactJS",
+				"Integrating REST API's with Redux core",
+			],
+			media: {
+				type: "IMAGE",
+				source: {
+					url: "https://teknotrait.com/wp-content/uploads/2019/05/Teknotrait_logo_dark.png",
+				},
+			},
+		},
+		{
+			title: "Jun 2023 - Jan 2024",
+			cardTitle: "Aroha Technologies PVT LTD.",
+			url: "https://www.aroha.co.in/",
+			cardSubtitle: "Full Stack Trainer",
+			cardDetailedText: [
+				"Training people to up skill themselves in Full stack technologies",
+				"Preparing pre-built projects for the trainees to work on them as assignments",
+				"Mentoring the trainees on their projects",
+				"Developing web pages with NextJS",
+				"Up skilling myself in Python, Flask, NextJS and many more technologies.",
+			],
+			media: {
+				type: "IMAGE",
+				source: {
+					url: "https://media.licdn.com/dms/image/C510BAQH4iKCyQozIEA/company-logo_200_200/0/1631346171097?e=2147483647&v=beta&t=qNYafM17XIRLnf8pIernDuB24M2ktIL01snp72bVl8s",
+				},
+			},
+		},
+	];
+	return (
+		<React.Fragment>
+			<div className="portfolio-bg p-4">
+				<div className="flex flex-col pl-10 mb-20 h-20">
+					<h1 className="sm:text-3xl md:text-4xl font-extrabold text-white">
+						Hi, I`M
+					</h1>
+					<h1 className="sm:text-3xl md:text-4xl font-extrabold text-yellow-600 typing-animation">
+						{" "}
+						{text}
+					</h1>
+				</div>
+				<h3 className="text-xl pl-10 text-white font-bold sm:w-full md:w-1/2">
+					I am a MERN stack developer with a passion for building beautiful and
+					logically sound web applications. I love building application with
+					MERN stack. I am primarily focused on building robust and scalable web
+					applications with ReactJS and I am a core React Developer too.
+				</h3>
+			</div>
+			<div className="bg-black md:p-10 sm:p-5">
+				<h3 className="text-white text-2xl font-extrabold underline mb-5">
+					Overview
+				</h3>
+				<p className="text-orange-400 text-lg font-bold mb-10 sm:w-full md:w-1/2">
+					All the control lies in backend and I always wanted to build the full
+					stack applications and websites. Because of that, I started learning
+					backend with NodeJS, Python, Flask and Express along with data bases
+					MongoDB, mySQL and SQLite and I started loving those controllers and
+					middlewares and slowly I became a skilled full stack developer with
+					self learning and now I am a Full stack Developer with the skills MERN
+					stack, Python, React Native and many more technologies.
+				</p>
+				<div className="flex flex-wrap justify-center items-center space-y-2 space-x-3 md:p-10 sm:p-2">
+					{stacks.map((stack, idx) => {
+						return (
+							<div
+								key={idx}
+								className="flex flex-col items-center space-y-4 p-4 border-2 rounded-md border-white animate-pulse">
+								<Image src={stack.img} alt="" width={200} height={200} />
+								<h3 className="text-white text-xl font-extrabold">
+									{stack.name}
+								</h3>
+							</div>
+						);
+					})}
+				</div>
+			</div>
+			<div className="bg-black flex flex-col items-center">
+				<h3 className="text-white text-2xl font-extrabold underline">
+					My Skills:
+				</h3>
+				<h5 className="text-gray-500 font-bold text-xl mb-10">Technologies</h5>
+				<div className="md:w-[70%] flex flex-wrap justify-center items-center space-x-10 sm:w-full">
+					{skills.map((skill, idx) => {
+						return (
+							<Image
+								src={skill.logo}
+								alt=""
+								height={100}
+								width={150}
+								key={idx}
+								className={
+									idx % 2 === 0 ? "animate-oneWay1" : "animate-oneWay2"
+								}
+								style={{
+									backgroundColor: skill.logo === "/flask.png" ? "white" : "",
+									borderRadius: skill.logo === "/flask.png" ? "50%" : "",
+								}}
+							/>
+						);
+					})}
+				</div>
+			</div>
+			<div className="bg-black p-10">
+				<h2 className="text-white text-4xl font-extrabold mb-5">
+					My Work Experience
+				</h2>
+				<div className="w-full rounded-md bg-gray-100 p-5">
+					<Chrono items={chronoItems} mode="VERTICAL_ALTERNATING" />
+				</div>
+			</div>
+		</React.Fragment>
+	);
 }
