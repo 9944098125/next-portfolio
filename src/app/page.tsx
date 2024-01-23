@@ -177,6 +177,7 @@ export default function Home() {
 			},
 		},
 	];
+
 	return (
 		<React.Fragment>
 			<div className="portfolio-bg p-4">
@@ -201,13 +202,14 @@ export default function Home() {
 					Overview
 				</h3>
 				<p className="text-orange-400 text-lg font-bold mb-10 sm:w-full md:w-1/2">
-					All the control lies in backend and I always wanted to build the full
-					stack applications and websites. Because of that, I started learning
-					backend with NodeJS, Python, Flask and Express along with data bases
-					MongoDB, mySQL and SQLite and I started loving those controllers and
-					middlewares and slowly I became a skilled full stack developer with
-					self learning and now I am a Full stack Developer with the skills MERN
-					stack, Python, React Native and many more technologies.
+					All the control lies in the backend & database, and I{"'"}ve always
+					wanted to build the full stack applications and websites. Because of
+					that, I started learning backend with NodeJS, Python, Flask and
+					Express along with data bases like MongoDB, mySQL and SQLite and I
+					started loving those controllers and middlewares and slowly I became a
+					skilled full stack developer with self learning and now I am a Full
+					stack Developer with the skills MERN stack, Python, React Native and
+					some more technologies.
 				</p>
 				<div className="flex flex-wrap justify-center items-center space-y-2 space-x-3 md:p-10 sm:p-2">
 					{stacks.map((stack, idx) => {
@@ -215,7 +217,13 @@ export default function Home() {
 							<div
 								key={idx}
 								className="flex flex-col items-center space-y-4 p-4 border-2 rounded-md border-white animate-pulse">
-								<Image src={stack.img} alt="" width={200} height={200} />
+								<Image
+									src={stack.img}
+									alt=""
+									width={200}
+									height={200}
+									style={{ height: "200px", width: "200px" }}
+								/>
 								<h3 className="text-white text-xl font-extrabold">
 									{stack.name}
 								</h3>
@@ -225,10 +233,9 @@ export default function Home() {
 				</div>
 			</div>
 			<div className="bg-black flex flex-col items-center">
-				<h3 className="text-white text-2xl font-extrabold underline">
+				<h3 className="text-white text-2xl font-extrabold underline mb-5">
 					My Skills:
 				</h3>
-				<h5 className="text-gray-500 font-bold text-xl mb-10">Technologies</h5>
 				<div className="md:w-[70%] flex flex-wrap justify-center items-center space-x-10 sm:w-full">
 					{skills.map((skill, idx) => {
 						return (
@@ -244,17 +251,19 @@ export default function Home() {
 								style={{
 									backgroundColor: skill.logo === "/flask.png" ? "white" : "",
 									borderRadius: skill.logo === "/flask.png" ? "50%" : "",
+									width: "170px",
+									height: "150px",
 								}}
 							/>
 						);
 					})}
 				</div>
 			</div>
-			<div className="bg-black p-10">
+			<div className="hidden md:block bg-black p-10">
 				<h2 className="text-white text-4xl font-extrabold mb-5">
 					My Work Experience
 				</h2>
-				<div className="w-full rounded-md bg-gray-100 p-5">
+				<div className="w-full rounded-md bg-black p-5 border-2 border-blue-600">
 					<Chrono items={chronoItems} mode="VERTICAL_ALTERNATING" />
 				</div>
 			</div>

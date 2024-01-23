@@ -15,7 +15,7 @@ const Navbar = () => {
 
 	return (
 		<React.Fragment>
-			<div className="flex items-center justify-between bg-gradient-to-r from-black via-yellow-800 to-gray-500 border-b-2 border-yellow-600">
+			<div className="flex justify-between items-center gradient-bg border-b-2 border-green-400">
 				<Link href="/">
 					<div className="px-5 flex items-center space-x-4">
 						<Image
@@ -25,9 +25,11 @@ const Navbar = () => {
 							height={50}
 							style={{
 								borderRadius: "50%",
+								width: "110px",
+								height: "80px",
 							}}
 						/>
-						<h3 className="hidden lg:flex text-gray-400 font-extrabold md:text-2xl sm:text-lg">
+						<h3 className="hidden lg:flex text-white font-extrabold md:text-2xl sm:text-lg">
 							Srinivas Akella
 						</h3>
 					</div>
@@ -87,7 +89,7 @@ const Navbar = () => {
 					</Link>
 
 					<Link href="/contact">
-						<p className="animate-moveUpDown4 bg-gradient-to-r from-orange-900 via-green-700 to-yellow-600 lg:text-md text-white font-extrabold md:w-[150px] p-2 rounded-md">
+						<p className="animate-moveUpDown4 bg-gradient-to-r from-green-400 via-yellow-400 to-red-600 lg:text-md text-white font-extrabold md:w-[150px] p-2 rounded-md">
 							Contact Me
 						</p>
 					</Link>

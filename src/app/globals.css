@@ -43,7 +43,7 @@ body,
 	animation: typing 1s steps(20), erasing 1s steps(20) 2s; /* Adjust the animation duration and steps */
 }
 .outlet {
-	height: 88vh;
+	height: 88.7vh;
 	overflow-y: scroll;
 }
 .outlet::-webkit-scrollbar {
