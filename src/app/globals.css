@@ -185,5 +185,6 @@ body,
 		background-color: white;
 		padding: 15px 20px;
 		width: 180px;
+		z-index: 10;
 	}
 }
