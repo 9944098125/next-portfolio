@@ -6,12 +6,12 @@ import React from "react";
 import { MdOutlineMenu } from "react-icons/md";
 
 import "./styles.css";
-import useClickOutside from "./useClickOutside";
+// import useClickOutside from "./useClickOutside";
 
 const Navbar = () => {
 	const [showMenu, setShowMenu] = React.useState(false);
 	const menuRef = React.useRef(null);
-	useClickOutside(menuRef, () => setShowMenu(false));
+	// useClickOutside(menuRef, () => setShowMenu(false));
 
 	return (
 		<React.Fragment>
@@ -35,7 +35,7 @@ const Navbar = () => {
 						</h3>
 					</div>
 				</Link>
-				<div className="md:hidden px-5">
+				<div className="sm:flex md:hidden px-5">
 					<MdOutlineMenu
 						onClick={() => setShowMenu(!showMenu)}
 						fontSize={50}
@@ -43,7 +43,7 @@ const Navbar = () => {
 					/>
 					{showMenu && (
 						<div
-							ref={menuRef}
+							// ref={menuRef}
 							className="absolute z-10 right-10 top-50 bg-white py-2 px-4 rounded-md shadow-md">
 							<Link href="/work">
 								<p className="text-md text-gray-700 font-extrabold">
