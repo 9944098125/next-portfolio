@@ -54,3 +54,12 @@
 		transform: translateX(0);
 	}
 }
+@media screen and (max-width: 768px) {
+	.move-image-from-left {
+		animation: moveImageFromLeft 2s ease-in-out infinite;
+	}
+	.move-image-from-right {
+		animation: moveImageFromRight 4s ease-in-out infinite;
+		animation-direction: reverse;
+	}
+}

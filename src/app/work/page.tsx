@@ -59,7 +59,11 @@ export default function Work() {
 								<Image
 									src={eachWork.img}
 									alt=""
-									className="work-images"
+									className={
+										idx % 2 === 0
+											? "animate-onWay1 work-images"
+											: "animate-oneWay2 work-images"
+									}
 									height={100}
 									width={100}
 								/>
