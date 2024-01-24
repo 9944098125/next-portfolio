@@ -1,47 +1,8 @@
-"use client";
-
+import TypingAnimation from "@/Components/TypingAnimation";
 import Image from "next/image";
-// Import React and useState
-import React, { useEffect, useState } from "react";
-import { Chrono } from "react-chrono";
+import React from "react";
 
 export default function Home() {
-	const [text, setText] = useState("");
-	const [isTyping, setIsTyping] = useState(true);
-
-	useEffect(() => {
-		const messages = ["Srinivas Prasad Akella", "A MERN stack Developer"]; // Replace with the desired messages
-		const typingDelay = 150; // Delay between typing characters
-		const erasingDelay = 100; // Delay between erasing characters
-		const pauseBeforeStart = 1000; // Pause before starting the animation
-
-		const animate = async () => {
-			while (true) {
-				for (let i = 0; i < messages.length; i++) {
-					const currentText = messages[i];
-					setIsTyping(true);
-					for (let j = 0; j < currentText.length; j++) {
-						setText(currentText.substring(0, j + 1));
-						await new Promise((resolve) => setTimeout(resolve, typingDelay));
-					}
-
-					await new Promise((resolve) => setTimeout(resolve, pauseBeforeStart));
-
-					setIsTyping(false);
-
-					for (let j = currentText.length; j > 0; j--) {
-						setText(currentText.substring(0, j - 1));
-						await new Promise((resolve) => setTimeout(resolve, erasingDelay));
-					}
-
-					await new Promise((resolve) => setTimeout(resolve, pauseBeforeStart));
-				}
-			}
-		};
-
-		animate();
-	}, []);
-
 	const stacks = [
 		{
 			img: "/frontend.jpeg",
@@ -122,62 +83,6 @@ export default function Home() {
 		},
 	];
 
-	const chronoItems = [
-		{
-			title: "Dec 2020 - Nov 2021",
-			cardTitle: "Teknotrait Solutions PVT LTD.",
-			url: "https://www.teknotrait.com/",
-			cardSubtitle: "Web Development Intern",
-			cardDetailedText: [
-				"Learning logics in ReactJS, NodeJS & MySQL",
-				"Developing web pages with vanilla Javascript",
-				"Learning Global State Management with Redux & Context",
-			],
-			media: {
-				type: "IMAGE",
-				source: {
-					url: "https://teknotrait.com/wp-content/uploads/2019/05/Teknotrait_logo_dark.png",
-				},
-			},
-		},
-		{
-			title: "Dec 2021 - May 2023",
-			cardTitle: "Teknotrait Solutions PVT LTD.",
-			url: "https://www.teknotrait.com/",
-			cardSubtitle: "Associate Software Engineer",
-			cardDetailedText: [
-				"Developing Web Applications with ReactJS, NodeJS & MySQL",
-				"Developing web pages with ReactJS",
-				"Integrating REST API's with Redux core",
-			],
-			media: {
-				type: "IMAGE",
-				source: {
-					url: "https://teknotrait.com/wp-content/uploads/2019/05/Teknotrait_logo_dark.png",
-				},
-			},
-		},
-		{
-			title: "Jun 2023 - Jan 2024",
-			cardTitle: "Aroha Technologies PVT LTD.",
-			url: "https://www.aroha.co.in/",
-			cardSubtitle: "Full Stack Trainer",
-			cardDetailedText: [
-				"Training people to up skill themselves in Full stack technologies",
-				"Preparing pre-built projects for the trainees to work on them as assignments",
-				"Mentoring the trainees on their projects",
-				"Developing web pages with NextJS",
-				"Up skilling myself in Python, Flask, NextJS and many more technologies.",
-			],
-			media: {
-				type: "IMAGE",
-				source: {
-					url: "https://media.licdn.com/dms/image/C510BAQH4iKCyQozIEA/company-logo_200_200/0/1631346171097?e=2147483647&v=beta&t=qNYafM17XIRLnf8pIernDuB24M2ktIL01snp72bVl8s",
-				},
-			},
-		},
-	];
-
 	return (
 		<React.Fragment>
 			<div className="portfolio-bg p-4">
@@ -185,10 +90,7 @@ export default function Home() {
 					<h1 className="sm:text-3xl md:text-4xl font-extrabold text-white">
 						Hi, I`M
 					</h1>
-					<h1 className="sm:text-3xl md:text-4xl font-extrabold text-yellow-600 typing-animation">
-						{" "}
-						{text}
-					</h1>
+					<TypingAnimation />
 				</div>
 				<h3 className="text-xl pl-10 text-white font-bold sm:w-full md:w-1/2">
 					I am a MERN stack developer with a passion for building beautiful and
@@ -257,14 +159,6 @@ export default function Home() {
 							/>
 						);
 					})}
-				</div>
-			</div>
-			<div className="hidden md:block bg-black p-10">
-				<h2 className="text-white text-4xl font-extrabold mb-5">
-					My Work Experience
-				</h2>
-				<div className="w-full rounded-md bg-black p-5 border-2 border-blue-600">
-					<Chrono items={chronoItems} mode="VERTICAL_ALTERNATING" />
 				</div>
 			</div>
 		</React.Fragment>
