@@ -52,7 +52,9 @@ export default function Work() {
 					return (
 						<div
 							key={idx}
-							className="flex flex-col space-y-5 items-center md:flex-row border-2 mb-10 border-green-400 w-full rounded-md space-x-5 p-5">
+							className={`flex flex-col space-y-5 items-center md:flex-row border-2 mb-10 border-green-400 w-full rounded-md space-x-5 p-5 ${
+								idx % 2 === 0 ? "move-left-to-right" : "move-right-to-left"
+							}`}>
 							<div className="sm:w-full md:w-[50%] border-2 border-green-400 p-2 rounded-lg">
 								<Image
 									src={eachWork.img}

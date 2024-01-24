@@ -242,8 +242,8 @@ export default function Home() {
 							<Image
 								src={skill.logo}
 								alt=""
-								height={100}
-								width={150}
+								height={70}
+								width={100}
 								key={idx}
 								className={
 									idx % 2 === 0 ? "animate-oneWay1" : "animate-oneWay2"
@@ -251,8 +251,8 @@ export default function Home() {
 								style={{
 									backgroundColor: skill.logo === "/flask.png" ? "white" : "",
 									borderRadius: skill.logo === "/flask.png" ? "50%" : "",
-									width: "170px",
-									height: "150px",
+									width: "150px",
+									height: "120px",
 								}}
 							/>
 						);
