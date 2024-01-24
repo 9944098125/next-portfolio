@@ -10,6 +10,7 @@ export default function useClickOutside(ref: any, func: Function) {
 		func(event);
 	};
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	React.useEffect(() => {
 		document.addEventListener("mousedown", listener);
 		document.addEventListener("touchstart", listener);
