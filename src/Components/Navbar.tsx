@@ -14,7 +14,7 @@ const Navbar = () => {
 
 	return (
 		<React.Fragment>
-			<div className="flex justify-between items-center gradient-bg border-b-2 border-green-400">
+			<div className="gradient-bg">
 				<Link href="/">
 					<div className="px-5 flex items-center space-x-4">
 						<Image
@@ -69,27 +69,19 @@ const Navbar = () => {
 
 				<div className="medium-device-menu-container">
 					<Link href="/work">
-						<p className="animate-moveUpDown1 bg-gradient-to-l from-blue-800 via-green-500 to-blue-300 lg:text-md text-white font-extrabold md:w-[150px] p-2 rounded-md">
-							What do I do ?
-						</p>
+						<p className="animate-moveUpDown1 gradient-links">What do I do ?</p>
 					</Link>
 
 					<Link href="/projects">
-						<p className="animate-moveUpDown2 bg-gradient-to-r from-red-800 via-pink-400 to-red-400 lg:text-md text-white font-extrabold md:w-[150px] p-2 rounded-md">
-							Portfolio
-						</p>
+						<p className="animate-moveUpDown2 gradient-links">Portfolio</p>
 					</Link>
 
 					<Link href="/about">
-						<p className="animate-moveUpDown3 bg-gradient-to-l from-orange-900 via-yellow-600 to-green-800 lg:text-md text-white font-extrabold md:w-[150px] p-2 rounded-md">
-							About Me
-						</p>
+						<p className="animate-moveUpDown3 gradient-links">About Me</p>
 					</Link>
 
 					<Link href="/contact">
-						<p className="animate-moveUpDown4 bg-gradient-to-r from-green-400 via-yellow-400 to-red-600 lg:text-md text-white font-extrabold md:w-[150px] p-2 rounded-md">
-							Contact Me
-						</p>
+						<p className="animate-moveUpDown4 gradient-links">Contact Me</p>
 					</Link>
 				</div>
 			</div>
