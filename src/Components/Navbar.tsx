@@ -10,7 +10,12 @@ import useClickOutside from "./useClickOutside";
 const Navbar = () => {
 	const [showMenu, setShowMenu] = React.useState(false);
 	const menuRef = React.useRef(null);
-	useClickOutside(menuRef, () => setShowMenu(false));
+	const toggleBtnRef = React.useRef(null);
+	useClickOutside(menuRef, toggleBtnRef, () => setShowMenu(false));
+
+	const toggleMenu = () => {
+		setShowMenu((prev) => !prev);
+	};
 
 	return (
 		<React.Fragment>
@@ -35,11 +40,13 @@ const Navbar = () => {
 					</div>
 				</Link>
 				<div className="small-device-menu-container">
-					<MdOutlineMenu
-						onClick={() => setShowMenu(!showMenu)}
-						fontSize={50}
-						className="text-gray-400 cursor-pointer"
-					/>
+					<div ref={toggleBtnRef}>
+						<MdOutlineMenu
+							onClick={toggleMenu}
+							fontSize={50}
+							className="text-gray-400 cursor-pointer"
+						/>
+					</div>
 					{showMenu && (
 						<div ref={menuRef} className="absolute-container">
 							<Link href="/work">

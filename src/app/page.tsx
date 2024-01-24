@@ -99,11 +99,11 @@ export default function Home() {
 					applications with ReactJS and I am a core React Developer too.
 				</h3>
 			</div>
-			<div className="bg-black md:p-10 sm:p-5">
+			<div className="bg-black w-full p-5 md:p-10">
 				<h3 className="text-white text-2xl font-extrabold underline mb-5">
 					Overview
 				</h3>
-				<p className="text-orange-400 text-lg font-bold mb-10 sm:w-full md:w-1/2">
+				<p className="text-orange-400 text-md font-bold mb-10 sm:w-full md:w-1/2">
 					All the control lies in the backend & database, and I{"'"}ve always
 					wanted to build the full stack applications and websites. Because of
 					that, I started learning backend with NodeJS, Python, Flask and
