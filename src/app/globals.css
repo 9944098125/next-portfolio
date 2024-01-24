@@ -49,6 +49,11 @@ body,
 .outlet::-webkit-scrollbar {
 	display: none;
 }
+@media screen and (max-width: 1025px) {
+	.outlet {
+		height: 87vh;
+	}
+}
 @keyframes animateSideways1 {
 	0%,
 	100% {

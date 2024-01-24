@@ -13,11 +13,11 @@ type FormValues = {
 };
 
 export default function Contact() {
-	const initialValues = {
+	const [initialValues, setInitialValValues] = React.useState({
 		name: "",
 		email: "",
 		message: "",
-	};
+	});
 
 	const validate = (values: FormValues) => {
 		let errors: Partial<FormValues> = {};
@@ -73,7 +73,10 @@ export default function Contact() {
 						<Formik
 							initialValues={initialValues}
 							validate={(values: FormValues) => validate(values)}
-							onSubmit={(values: FormValues) => submitContactForm(values)}>
+							onSubmit={(values: FormValues, { resetForm }) => {
+								submitContactForm(values);
+								resetForm();
+							}}>
 							{({ errors, touched }: any) => {
 								return (
 									<Form>
