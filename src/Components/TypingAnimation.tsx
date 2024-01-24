@@ -40,10 +40,7 @@ const TypingAnimation = () => {
 	}, []);
 	return (
 		<React.Fragment>
-			<h1 className="sm:text-3xl md:text-4xl font-extrabold text-yellow-600 typing-animation">
-				{" "}
-				{text}
-			</h1>
+			<h1 className="typing-animation"> {text}</h1>
 		</React.Fragment>
 	);
 };

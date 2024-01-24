@@ -37,6 +37,9 @@ body,
 }
 
 .typing-animation {
+	font-size: 25px;
+	color: rgb(255, 171, 14);
+	font-weight: 800;
 	overflow: hidden;
 	border-right: 2px solid #fff; /* Adjust the border color */
 	white-space: nowrap;
