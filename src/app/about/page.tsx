@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 
 export default function About() {
 	return (
 		<React.Fragment>
-			<div className="w-full h-full bg-black space-y-10 p-5 md:p-15">
+			<div className="w-full min-h-screen bg-black space-y-10 p-5 md:p-15">
 				<div className="flex flex-col md:flex-row items-center justify-around px-5 md:px-15 sm:space-y-5">
 					<div className="w-full md:w-[50%] p-5 md:p-15 border-2 border-green-400 rounded-md">
 						<h2 className="text-white text-2xl font-bold">
@@ -19,30 +19,34 @@ export default function About() {
 						src="https://res.cloudinary.com/dakda5ni3/image/upload/v1705679470/v7h1kvc1t9mjl0v4wp3b.jpg"
 						height={250}
 						width={200}
-						style={{ borderRadius: "50%" }}
+						style={{
+							borderRadius: "50%",
+							border: "3px solid #0BDA51",
+							padding: "20px",
+						}}
 						alt=""
-						className="animate-bounce"
 					/>
 				</div>
 
 				<div className="flex flex-col md:flex-row items-center justify-around px-5 md:px-15">
-					<div className="flex items-center space-x-10 p-5 md:p-15">
-						<Link href="https://github.com/9944098125" target="_blank">
-							<FaGithubSquare
-								className="animate-bounce"
-								color="white"
-								fontSize={50}
-							/>
-						</Link>
-						<Link
-							href="https://www.linkedin.com/in/srinivas-prasad-akella-6abb28195/"
-							target="_blank">
-							<FaLinkedin
-								className="animate-bounce"
-								color="white"
-								fontSize={50}
-							/>
-						</Link>
+					<div className="flex items-center space-x-10 p-5 md:p-15 border-2 border-green-400 rounded-md w-[50%] md:w-[17%] overflow-x-scroll mb-5">
+						<div className="border-2 border-green-400 p-5 ml-10 rounded">
+							<Link href="https://github.com/9944098125" target="_blank">
+								<FaGithubSquare color="white" fontSize={50} />
+							</Link>
+						</div>
+						<div className="border-2 border-green-400 p-5 mr-10 rounded">
+							<Link
+								href="https://www.linkedin.com/in/srinivas-prasad-akella-6abb28195/"
+								target="_blank">
+								<FaLinkedin color="white" fontSize={50} />
+							</Link>
+						</div>
+						<div className="border-2 border-green-400 p-5 mr-10 rounded">
+							<Link href="https://www.facebook.com/" target="_blank">
+								<FaFacebook color="white" fontSize={50} />
+							</Link>
+						</div>
 					</div>
 					<div className="w-full md:w-1/2 p-5 md:p-15 border-2 border-green-400 rounded-md">
 						<h2 className="text-white text-2xl font-bold">

@@ -106,6 +106,7 @@ export default function Portfolio() {
 											return (
 												<span key={idx} className="text-gray-300 font-bold">
 													{eachTech}
+													{", "}
 												</span>
 											);
 										})}

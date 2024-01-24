@@ -28,6 +28,7 @@ const Navbar = () => {
 								width: "110px",
 								height: "80px",
 							}}
+							priority
 						/>
 						<h3 className="hidden lg:flex text-white font-extrabold md:text-2xl sm:text-lg">
 							Srinivas Akella

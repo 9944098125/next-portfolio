@@ -73,3 +73,6 @@ body,
 .animate-oneWay2 {
 	animation: animateSideways2 2s ease-in-out infinite;
 }
+.overflow-x-scroll::-webkit-scrollbar {
+	display: none !important;
+}
