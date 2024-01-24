@@ -34,16 +34,14 @@ const Navbar = () => {
 						</h3>
 					</div>
 				</Link>
-				<div className="sm:flex md:hidden px-5">
+				<div className="small-device-menu-container">
 					<MdOutlineMenu
 						onClick={() => setShowMenu(!showMenu)}
 						fontSize={50}
 						className="text-gray-400 cursor-pointer"
 					/>
 					{showMenu && (
-						<div
-							ref={menuRef}
-							className="absolute z-10 right-10 top-50 bg-white py-2 px-4 rounded-md shadow-md">
+						<div ref={menuRef} className="absolute-container">
 							<Link href="/work">
 								<p className="text-md text-gray-700 font-extrabold">
 									What do I do ?
@@ -69,7 +67,7 @@ const Navbar = () => {
 					)}
 				</div>
 
-				<div className="hidden md:flex items-center space-x-4 px-5">
+				<div className="medium-device-menu-container">
 					<Link href="/work">
 						<p className="animate-moveUpDown1 bg-gradient-to-l from-blue-800 via-green-500 to-blue-300 lg:text-md text-white font-extrabold md:w-[150px] p-2 rounded-md">
 							What do I do ?

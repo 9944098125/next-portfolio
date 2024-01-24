@@ -142,3 +142,29 @@ body,
 .gradient-bg {
 	background: linear-gradient(to top, black, rgb(4, 52, 78), rgb(0, 122, 94));
 }
+@media screen and (min-width: 768px) {
+	.small-device-menu-container {
+		display: none;
+	}
+	.medium-device-menu-container {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	}
+}
+@media screen and (max-width: 768px) {
+	.medium-device-menu-container {
+		display: none;
+	}
+	.small-device-menu-container {
+		display: block;
+	}
+	.absolute-container {
+		position: absolute;
+		right: 15px;
+		top: 70px;
+		border-radius: 9px;
+		background-color: white;
+		padding: 15px 20px;
+	}
+}
