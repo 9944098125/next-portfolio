@@ -7,7 +7,7 @@ export default function useClickOutside(ref: any, func: Function) {
 		if (!ref.current || ref.current.contains(event.target)) {
 			return;
 		}
-		func();
+		func(event);
 	};
 
 	React.useEffect(() => {
