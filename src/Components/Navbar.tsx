@@ -5,7 +5,6 @@ import Link from "next/link";
 import React from "react";
 import { MdOutlineMenu } from "react-icons/md";
 
-import "./styles.css";
 import useClickOutside from "./useClickOutside";
 
 const Navbar = () => {
