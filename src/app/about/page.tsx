@@ -7,7 +7,7 @@ import { FaFacebook, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 export default function About() {
 	return (
 		<React.Fragment>
-			<div className="w-full bg-black space-y-10 p-5 md:p-15">
+			<div className="w-full min-h-screen bg-black space-y-10 p-5 md:p-15">
 				<div className="flex flex-col md:flex-row items-center justify-around px-5 md:px-15 sm:space-y-5">
 					<div className="w-full md:w-[50%] p-5 md:p-15 border-2 border-green-400 rounded-md">
 						<h2 className="text-white text-2xl font-bold">

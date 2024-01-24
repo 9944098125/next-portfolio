@@ -59,50 +59,10 @@ export default function Contact() {
 				<div className="flex flex-col md:flex-row p-5 md:p-15">
 					<div className="w-full md:w-1/2 flex flex-col md:flex-row flex-wrap space-y-2 md:space-x-5 items-center justify-center md:p-10">
 						<Image
-							src="/contact.webp"
-							alt=""
-							height={250}
-							width={200}
-							className="contact-image animate-oneWay2"
-							placeholder="empty"
-							quality={100}
-							loading="eager"
-						/>
-						<Image
-							src="/contact2.png"
-							alt=""
-							height={250}
-							width={200}
-							className="contact-image animate-oneWay1"
-							placeholder="empty"
-							quality={100}
-							loading="eager"
-						/>
-						<Image
-							src="/contact3.png"
-							alt=""
-							height={250}
-							width={200}
-							className="contact-image animate-oneWay2"
-							placeholder="empty"
-							quality={100}
-							loading="eager"
-						/>
-						<Image
-							src="/contact4.png"
-							alt=""
-							height={250}
-							width={200}
-							className="contact-image animate-oneWay1"
-							placeholder="empty"
-							quality={100}
-							loading="eager"
-						/>
-						<Image
 							src="/contact5.png"
 							alt=""
-							height={250}
-							width={200}
+							height={450}
+							width={450}
 							className="contact-image animate-oneWay2"
 							placeholder="empty"
 							quality={100}
@@ -190,8 +150,8 @@ export default function Contact() {
 										<div className="w-full sm:p-5 md:p-25">
 											<button
 												type="submit"
-												className="button bg-green-400 border-none outline-none p-2 px-5 h-[45px] hover:h-[55px] hover:bg-green-600 w-full rounded-md text-white font-extrabold text-xl">
-												Send
+												className="bg-gradient-to-tr from-black via-green-400 to-green-800 border-none outline-none p-2 px-5 h-[45px] hover:h-[55px] hover:bg-green-400 w-full rounded-md text-white font-extrabold text-xl">
+												Send Message
 											</button>
 										</div>
 									</Form>
