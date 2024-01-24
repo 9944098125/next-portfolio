@@ -3,20 +3,23 @@
 import React from "react";
 
 export default function useClickOutside(ref: any, func: Function) {
-	const listener = (event: any) => {
-		if (!ref.current || ref.current.contains(event.target)) {
-			return;
-		}
-		func(event);
-	};
-
-	// eslint-disable-next-line react-hooks/exhaustive-deps
 	React.useEffect(() => {
-		document.addEventListener("mousedown", listener);
-		document.addEventListener("touchstart", listener);
-		return () => {
-			document.removeEventListener("mousedown", listener);
-			document.removeEventListener("touchstart", listener);
+		const listener = (event: any) => {
+			if (!ref.current || ref.current.contains(event.target)) {
+				return;
+			}
+			func(event);
 		};
-	});
+
+		if (typeof window !== "undefined") {
+			// Add event listeners only in the client-side environment
+			document.addEventListener("mousedown", listener);
+			document.addEventListener("touchstart", listener);
+
+			return () => {
+				document.removeEventListener("mousedown", listener);
+				document.removeEventListener("touchstart", listener);
+			};
+		}
+	}, [ref, func]);
 }
