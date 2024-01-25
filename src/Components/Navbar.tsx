@@ -37,7 +37,7 @@ const Navbar = () => {
 							}}
 							priority
 						/>
-						<h3 className="hidden md:block text-white font-extrabold md:text-2xl sm:text-lg">
+						<h3 className="sm:hidden md:block text-white font-extrabold md:text-2xl sm:text-lg">
 							Srinivas Akella
 						</h3>
 					</div>
