@@ -6,8 +6,11 @@ import React from "react";
 import { MdOutlineMenu } from "react-icons/md";
 
 import useClickOutside from "./useClickOutside";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+	const pathname = usePathname();
+	console.log(pathname);
 	const [showMenu, setShowMenu] = React.useState(false);
 	const menuRef = React.useRef(null);
 	const toggleBtnRef = React.useRef(null);
@@ -34,7 +37,7 @@ const Navbar = () => {
 							}}
 							priority
 						/>
-						<h3 className="hidden lg:flex text-white font-extrabold md:text-2xl sm:text-lg">
+						<h3 className="hidden md:block text-white font-extrabold md:text-2xl sm:text-lg">
 							Srinivas Akella
 						</h3>
 					</div>
@@ -54,17 +57,17 @@ const Navbar = () => {
 									What do I do ?
 								</p>
 							</Link>
-							<hr className="border-b-1 border-gray-600 mt-2 mb-2" />
+							<hr className="border-b-1 border-gray-600 mt-5 mb-5" />
 							<Link href="/projects">
 								<p className="text-md text-gray-700 font-extrabold">
 									Portfolio
 								</p>
 							</Link>
-							<hr className="border-b-1 border-gray-600 mt-2 mb-2" />
+							<hr className="border-b-1 border-gray-600 mt-5 mb-5" />
 							<Link href="/about">
 								<p className="text-md text-gray-700 font-extrabold">About Me</p>
 							</Link>
-							<hr className="border-b-1 border-gray-600 mt-2 mb-2" />
+							<hr className="border-b-1 border-gray-600 mt-5 mb-5" />
 							<Link href="/contact">
 								<p className="text-md text-gray-700 font-extrabold">
 									Contact Me
@@ -76,19 +79,27 @@ const Navbar = () => {
 
 				<div className="medium-device-menu-container">
 					<Link href="/work">
-						<p className="animate-moveUpDown1 gradient-links">What do I do ?</p>
+						<p className={pathname === "/work" ? "links active" : "links"}>
+							What do I do ?
+						</p>
 					</Link>
 
 					<Link href="/projects">
-						<p className="animate-moveUpDown2 gradient-links">Portfolio</p>
+						<p className={pathname === "/projects" ? "links active" : "links"}>
+							Portfolio
+						</p>
 					</Link>
 
 					<Link href="/about">
-						<p className="animate-moveUpDown3 gradient-links">About Me</p>
+						<p className={pathname === "/about" ? "links active" : "links"}>
+							About Me
+						</p>
 					</Link>
 
 					<Link href="/contact">
-						<p className="animate-moveUpDown4 gradient-links">Contact Me</p>
+						<p className={pathname === "/contact" ? "links active" : "links"}>
+							Contact Me
+						</p>
 					</Link>
 				</div>
 			</div>

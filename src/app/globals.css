@@ -89,70 +89,40 @@ body,
 .overflow-x-scroll::-webkit-scrollbar {
 	display: none !important;
 }
-@keyframes snakeAnimation1 {
-	0%,
-	100% {
-		transform: translateY(-15px);
-	}
-	50% {
-		transform: translateY(15px);
-	}
-}
-.animate-moveUpDown1 {
-	animation: snakeAnimation1 4s ease-in-out infinite;
-}
-
-@keyframes snakeAnimation2 {
-	0%,
-	100% {
-		transform: translateY(15px);
-	}
-	50% {
-		transform: translateY(-15px);
-	}
-}
-.animate-moveUpDown2 {
-	animation: snakeAnimation2 4s ease-in-out infinite;
-}
-
-@keyframes snakeAnimation3 {
-	0%,
-	100% {
-		transform: translateY(-15px);
-	}
-	50% {
-		transform: translateY(15px);
-	}
-}
-.animate-moveUpDown3 {
-	animation: snakeAnimation3 4s ease-in-out infinite;
-}
-
-@keyframes snakeAnimation4 {
-	50% {
-		transform: translateY(15px);
-	}
-	0%,
-	100% {
-		transform: translateY(-15px);
-	}
-}
-.animate-moveUpDown4 {
-	animation: snakeAnimation4 2s ease-in-out infinite;
-}
-
-.animate-moveUpDown1:hover,
-.animate-moveUpDown2:hover,
-.animate-moveUpDown3:hover,
-.animate-moveUpDown4:hover {
-	animation: none;
-}
 .gradient-bg {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	border-bottom: 2px solid rgb(3, 202, 106);
-	background: linear-gradient(to top, black, rgb(4, 52, 78), rgb(0, 122, 94));
+	background: linear-gradient(
+		to top right,
+		black,
+		rgb(0, 219, 197),
+		rgb(0, 80, 61)
+	);
+}
+.gradient-btn {
+	background: linear-gradient(
+		to top right,
+		black,
+		rgb(0, 219, 197),
+		rgb(0, 80, 61)
+	);
+	font-size: 18px;
+	font-weight: 800;
+	color: white;
+	width: 100%;
+	height: 45px;
+	border-radius: 9px;
+}
+.gradient-btn:hover {
+	height: 55px;
+	background: linear-gradient(
+		to top right,
+		rgb(0, 65, 62),
+		rgb(0, 219, 197),
+		rgb(19, 19, 19)
+	);
 }
 @media screen and (min-width: 768px) {
 	.small-device-menu-container {
@@ -162,18 +132,19 @@ body,
 		display: flex;
 		align-items: center;
 		gap: 15px;
+		margin-right: 20px;
 	}
-	.gradient-links {
-		background: linear-gradient(
-			to top right,
-			rgb(0, 57, 38),
-			rgb(2, 203, 142),
-			rgb(241, 7, 147)
-		);
+	.links {
 		padding: 5px 10px;
+		border: 3px solid white;
 		color: white;
-		font-weight: bold;
+		font-weight: 800;
 		border-radius: 9px;
+	}
+	.active {
+		background-color: rgb(236, 247, 244);
+		color: rgb(0, 61, 57);
+		box-shadow: 2px 2px 2px 2px rgb(171, 255, 235);
 	}
 }
 @media screen and (max-width: 768px) {

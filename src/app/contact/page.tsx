@@ -52,7 +52,7 @@ export default function Contact() {
 
 	return (
 		<React.Fragment>
-			<div className="bg-black p-5 md:p-15">
+			<div className="bg-black min-h-screen p-5 md:p-15">
 				<h2 className="text-white text-2xl font-extrabold underline">
 					Contact Me
 				</h2>
@@ -80,7 +80,7 @@ export default function Contact() {
 							{({ errors, touched }: any) => {
 								return (
 									<Form>
-										<div className="w-full mb-5 sm:p-5 md:p-25">
+										<div className="w-full mb-5">
 											<label
 												className="text-white text-xl font-bold"
 												htmlFor="name">
@@ -103,7 +103,7 @@ export default function Contact() {
 												</div>
 											)}
 										</div>
-										<div className="w-full mb-5 sm:p-5 md:p-25">
+										<div className="w-full mb-5">
 											<label
 												className="text-white text-xl font-bold"
 												htmlFor="email">
@@ -126,7 +126,7 @@ export default function Contact() {
 												</div>
 											)}
 										</div>
-										<div className="w-full mb-5 sm:p-5 md:p-25">
+										<div className="w-full mb-5">
 											<label
 												className="text-white text-xl font-bold"
 												htmlFor="message">
@@ -150,10 +150,8 @@ export default function Contact() {
 												</div>
 											)}
 										</div>
-										<div className="w-full sm:p-5 md:p-25">
-											<button
-												type="submit"
-												className="bg-gradient-to-tr from-black via-green-400 to-green-800 border-none outline-none p-2 px-5 h-[45px] hover:h-[55px] hover:bg-green-400 w-full rounded-md text-white font-extrabold text-xl">
+										<div className="w-full">
+											<button type="submit" className="gradient-btn">
 												Send Message
 											</button>
 										</div>
