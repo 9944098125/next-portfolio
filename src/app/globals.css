@@ -146,6 +146,12 @@ body,
 		color: rgb(0, 61, 57);
 		box-shadow: 2px 2px 2px 2px rgb(171, 255, 235);
 	}
+	.my-name-on-navbar {
+		font-weight: 800;
+		color: white;
+		font-size: 18px;
+		margin-left: 15px;
+	}
 }
 @media screen and (max-width: 768px) {
 	.medium-device-menu-container {
@@ -165,5 +171,8 @@ body,
 		padding: 15px 20px;
 		width: 180px;
 		z-index: 10;
+	}
+	.my-name-on-navbar {
+		display: none;
 	}
 }

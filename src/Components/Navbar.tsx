@@ -37,9 +37,7 @@ const Navbar = () => {
 							}}
 							priority
 						/>
-						<h3 className="sm:hidden md:block text-white font-extrabold md:text-2xl sm:text-lg">
-							Srinivas Akella
-						</h3>
+						<h3 className="my-name-on-navbar">Srinivas Akella</h3>
 					</div>
 				</Link>
 				<div className="small-device-menu-container">
@@ -47,7 +45,7 @@ const Navbar = () => {
 						<MdOutlineMenu
 							onClick={toggleMenu}
 							fontSize={50}
-							className="text-gray-400 cursor-pointer"
+							className="text-white cursor-pointer"
 						/>
 					</div>
 					{showMenu && (
