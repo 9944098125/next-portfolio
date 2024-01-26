@@ -78,11 +78,11 @@ export default function Portfolio() {
 					return (
 						<div
 							key={idx}
-							className={`border-2 border-green-300 p-5 mb-5 rounded-md ${
+							className={`border-2 border-white p-5 mb-5 rounded-md ${
 								idx % 2 === 0 ? "move-left-to-right" : "move-right-to-left"
 							}`}>
 							<Link href={`${each.link}`} target="_blank">
-								<div className="p-2 border-2 border-green-300 rounded-md">
+								<div className="p-2 border-2 border-white rounded-md">
 									<Image
 										src={each.img}
 										alt=""

@@ -52,10 +52,10 @@ export default function Work() {
 					return (
 						<div
 							key={idx}
-							className={`flex flex-col space-y-5 items-center md:flex-row border-2 mb-10 border-green-400 w-full rounded-md space-x-5 p-5 ${
+							className={`flex flex-col space-y-5 items-center md:flex-row border-2 mb-10 border-white w-full rounded-md space-x-5 p-5 ${
 								idx % 2 === 0 ? "move-left-to-right" : "move-right-to-left"
 							}`}>
-							<div className="md:w-full lg:w-[50%] border-2 border-green-400 p-2 rounded-lg">
+							<div className="md:w-full lg:w-[50%] border-2 border-white p-2 rounded-lg">
 								<Image
 									src={eachWork.img}
 									alt=""
@@ -68,13 +68,13 @@ export default function Work() {
 									width={100}
 								/>
 							</div>
-							<div className="h-full p-2 border-2 border-green-400 rounded-md space-y-2">
-								<div className="border-2 border-green-400 p-2">
+							<div className="h-full p-2 border-2 border-white rounded-md space-y-2">
+								<div className="border-2 border-white p-2">
 									<h5 className="text-2xl text-white font-extrabold underline mb-5">
 										{eachWork.title}
 									</h5>
 								</div>
-								<div className="border-2 border-green-400 p-2">
+								<div className="border-2 border-white p-2">
 									<p className="text-md text-white font-bold">
 										{eachWork.description}
 									</p>
